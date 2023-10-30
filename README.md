@@ -12,7 +12,7 @@ Video demonstration: https://youtube.com/shorts/Ug5oerTwDiM?si=9ch4H0Yc5zlcSfkJ
 
 ## Homework #3 - Elevator Simulation
 
-The purpose of this task was to simulate the movement of an elevator between three floors. This was realised using a breadboard, three red LEDs to illustrate the floor on which the elevator is at, three pushbuttons used to "call" the elevator to a certain floor, a blue LED to indicate the movement of the elevator between floors and a passive buzzer which generates a simple tone of 800Hz when the doors of the elevator would close and a short one of 1000Hz when it "arrives" at its destination. The initial state of the elevator is on the first floor. To run the simulation, I used the Arduino UNO microcontroller board and the Arduino IDE (with the code uploaded in the Homework3_Elevator folder).
+The purpose of this task was to simulate the movement of an elevator between three floors. This was realised using a breadboard, three red LEDs to illustrate the floor on which the elevator is at, three pushbuttons used to "call" the elevator to a certain floor, a blue LED to indicate the movement of the elevator between floors and a passive buzzer which generates a simple tone of 800Hz when the doors of the elevator would close and a short one of 1000Hz when it "arrives" at its destination. The initial state of the elevator is on the first floor. To run the simulation, I used the Arduino UNO microcontroller board and the Arduino IDE (with the code uploaded in the Homework3_Elevator folder). The electrical scheme and physical setup are presented below: 
 
 ![Electrical scheme](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/b9e6e539-4987-4284-a60f-ff36dcfc030b)
 
