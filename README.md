@@ -20,3 +20,25 @@ The purpose of this task was to simulate the movement of an elevator between thr
 ![Elevator setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/64e88090-3c4e-47f8-880e-8d0adae78603)
 
 Video demonstration: https://youtu.be/KS6gAQM7ZwA?si=tOfHyc0fKOgSSqSp
+
+## Homework #3 - 7 Segment Display Drawing
+
+This task involves drawing on a Seven Segment Display by using a joystick to navigate through the segments and light them up at will. In order to achieve this, I used the Arduino UNO microcontroller board, a breadboard, a 7 Segment Display, 220Ω resistors and wires as needed, as well as a joystick. The movement between segments is indicated in a given matrix (as shown below), and the simulation code (which is uploaded in the Homework4_7Segment folder) is run using the Arduino IDE.
+
+![Movement Matrix](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/c9ec9435-af60-4907-b705-19e17e40d65e)
+
+The starting position is on the decimal point segment, and the current segment is indicated through a blinking of its led. The joystick can also be used to reset the display segments to their initial state in order to begin drawing from the top.
+
+![Electrical scheme](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/ba1a292b-e1f1-4e6e-978d-d04f9747e1d0)
+
+
+![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/a8dcdc2e-b927-4bde-bdbb-8901526d895e)
+
+Video demonstration: https://youtube.com/shorts/D_TH6OmUh6c?si=rLmXkZZM5AAlxBmO 
+
+
+
+
+
+
+
