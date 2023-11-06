@@ -21,7 +21,7 @@ The purpose of this task was to simulate the movement of an elevator between thr
 
 Video demonstration: https://youtu.be/KS6gAQM7ZwA?si=tOfHyc0fKOgSSqSp
 
-## Homework #3 - 7 Segment Display Drawing
+## Homework #4 - 7 Segment Display Drawing
 
 This task involves drawing on a Seven Segment Display by using a joystick to navigate through the segments and light them up at will. In order to achieve this, I used the Arduino UNO microcontroller board, a breadboard, a 7 Segment Display, 220Ω resistors and wires as needed, as well as a joystick. The movement between segments is indicated in a given matrix (as shown below), and the simulation code (which is uploaded in the Homework4_7Segment folder) is run using the Arduino IDE.
 
