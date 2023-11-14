@@ -117,8 +117,10 @@ void loop() {
     // If in start state, continue updating the stopwatch
     updateStopwatch();
   } else {
+    if(!lapViewState){
     // Pause state
     writeNumber(number);
+  }
   }
 
   int readingLap = digitalRead(lapButtonPin);
