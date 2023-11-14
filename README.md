@@ -36,8 +36,15 @@ The starting position is on the decimal point segment, and the current segment i
 
 Video demonstration: https://youtube.com/shorts/D_TH6OmUh6c?si=rLmXkZZM5AAlxBmO 
 
+## Homework #5 - Stopwatch 
+
+This technical assignment consists of simulating a stopwatch using a Four Digit Seven Segment Display and the 74HC595 Shift Register (as well as other electrical components such as buttons, resistors, wires, breadboards and the Arduino UNO microcontroller board). This project has multiple functionalities, such as using a button to start or pause the stopwatch, one to memorise up to four laps and another button to reset the timer back to its initial state (000.0). The lap button can also be used to view the previously recorded laps. In developing this project, I also learned about multiplexing and making use of optical persistence when working with multiple LEDs.
+The adjacent code can be found in the Homework5_Stopwatch folder.
 
 
+![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/86109616-6534-4fea-ba05-f326f3fb46ad)
+
+Video demonstration: https://youtu.be/3zze2odnqu8?si=2NGQ0i-xjIaa2zk_
 
 
 
