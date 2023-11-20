@@ -48,16 +48,16 @@ Video demonstration: https://youtu.be/3zze2odnqu8?si=2NGQ0i-xjIaa2zk_
 
 ## Homework #6 - Environment Monitor and Loggger
 
-This following projects is based on working with sensors, the serial monitor and RGB LED to monitor the light in the environment, to measure distances, offer feedback and log data. On the hardware side, I worked with the HC-SR04 Ultrasonic Sensor, the Light-Dependent Resistor, one RGB LED, the Arduino UNO board and other basic electrical components such as wires, resistors and a breadboard. 
+This following projects is based on working with sensors, the serial monitor and RGB LED to monitor the light in the environment, to measure distances, offer feedback and log data. On the hardware side, I worked with the HC-SR04 Ultrasonic Sensor, the Light-Dependent Resistor, one RGB LED, the Arduino UNO board and other basic electrical components such as wires, resistors and a breadboard. On the coding side, I used the Arduino IDE and learned to work with EEPROM, as well as the flash memory (adjacent code in the Homework6_EnvironmentMonitor).
 To access all the functionalities of the Monitor and Logger, the user interacts through a menu within the serial monitor. The menu has four main options, each with more detailed functionalities:
 
-1. **Sensor Settings**: in here, the user can choose a *sampling interval* between 1 and 10 seconds to tell the system how often to collect data from the sensors; the user can also set a *treshold* for each sensor, setting the smallest value they can retrieve from the environment before throwing an error.
+1. **Sensor Settings**: in here, the user can choose a sampling interval between 1 and 10 seconds to tell the system how often to collect data from the sensors; the user can also set a treshold for each sensor, establishing the smallest value they can retrieve from the environment before throwing an error.
 2. **Reset Logger Data**: this option gives the opportunity of deleting the existing measurements and restarting from 0.
-3. **System Status**: this third option is for checking the data that's being collected; in here, the user can see what the system is recording in real time, the last 10 measurements and the settings set for the sensors (either default or what was set at 1.)
+3. **System Status**: this third option is for checking the data that's being collected; in here, the user can see what the system is recording in real time, the last 10 measurements saved and the settings set for the sensors (either default or what was set at 1.)
 4. **RGB LED Control**: finally, this slot is for controlling the colours the RGB LED uses to give feedback; the user is presented with two modes:
    - automatic, where by default green inidicates if the system is functioning within given parameters and red indicates that the recorded values are exceeding the tresholds 
    - manual, where the user can choose their own colour code for feedback.
 
-
+![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/61009d20-8d57-4b65-bd54-2d052b88b750)
 
 Video demonstration: https://youtu.be/Y5vvGK696l0?si=BxaUvHymC53KD2CO
