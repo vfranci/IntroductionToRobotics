@@ -61,3 +61,27 @@ To access all the functionalities of the Monitor and Logger, the user interacts 
 ![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/61009d20-8d57-4b65-bd54-2d052b88b750)
 
 Video demonstration: https://youtu.be/Y5vvGK696l0?si=BxaUvHymC53KD2CO
+
+## Homework #7 - Mini Matrix Game
+
+This assignment represents a mini-game on a 8 by 8 LED matrix in which the purpose is to clear the entire matrix by taking down walls. To achieve this, the player moves around the field using a joystick and places bombs that destroy the walls when pressing the joystick button. The challenge of the game is to avoid collision with the walls and not get caught in the explosions' radius.
+
+Game components:
+1. **Player**: the position of the player is represented on the matrix by a slowly blinking dot; it can move up, down, left and right, as well as "through the edges" of the matrix.
+2. **Bombs**: the bombs, placed by the player wherever they choose on the walkable spaces, explode within three seconds of being placed; a player can place a maximum of three bombs at a time; bombs are represented through faster blinking dots.
+3. **Walls**: the walls are randomly generated on the matrix at the start of the game or when choosing to play again; they are represented through LEDs that are lit up and not blinking.
+
+If the player succeeds in breaking down all the walls and clearing the field, a smiling face will be displayed to indicate the game has been won. If the player runs into a wall or explodes with the bomb they placed, the game will be over as indicated by a sad face animation. In both cases, the player can enter 0 in the serial monitor if they want to try again, at which point a new field will be generated and the game will start again.
+
+For this project, I used the Arduino Uno board, an 8x8 LED Matrix, the MAX7219 display driver, a joystick as well as two breadboards, resistors, capacitors and wires. The code can be found in the Homework7_MiniMatrixGame folder.
+
+![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/e2f32187-a6db-49e0-840e-beeae969fbea)
+
+Video demonstration: https://youtu.be/kkz1Z_EdIL0?si=XYh3HSrdYYKS3_C8 
+
+
+
+
+
+
+
