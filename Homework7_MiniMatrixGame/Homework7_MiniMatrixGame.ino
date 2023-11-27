@@ -1,17 +1,23 @@
 #include "LedControl.h"
 
+// Pins
 const int xPin = A0;
 const int yPin = A1;
 const int dinPin = 12;
 const int clockPin = 11;
 const int loadPin = 10;
-const int matrixSize = 8;
 const int swPin = 2;
 
+// Play field
 LedControl lc = LedControl(dinPin, clockPin, loadPin, 1);
 byte matrixBrightness = 2;
+
+const int matrixSize = 8;
+const int matrixStart = 0;
+const int matrixEnd = 7;
 byte matrix[matrixSize][matrixSize];
 
+// Displays for the end of the game
 byte sadFace[matrixSize][matrixSize] = {
   {0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0},
@@ -34,10 +40,9 @@ byte happyFace[matrixSize][matrixSize] = {
   {0, 0, 0, 0, 0, 0, 0, 0}
 };
 
+// Variables for bombs
 const int maxBombs = 3;  
 const int bombsStart = 0;
-const int matrixStart = 0;
-const int matrixEnd = 7;
 
 struct Bomb {
   int row;
@@ -50,14 +55,17 @@ Bomb bombs[maxBombs];
 unsigned long bombBlinkDuration = 3000;  
 unsigned long bombExplosionDuration = 1000;  
 
+// Player positions
 int rowCurrentPos;
 int colCurrentPos;
 int rowLastPos;
 int colLastPos;
 
+// Variables for ending the game
 bool gameLost = false;
 bool collision = false;
 
+// Variables and values for joystick 
 int xValue = 0;
 int yValue = 0;
 bool joyMoved = false;
@@ -69,14 +77,18 @@ byte swState = HIGH;
 byte lastSwState = HIGH;
 unsigned long lastMoveTime = 0;
 unsigned long moveDelay = 200;
-unsigned long blinkStartTime = 0;
-unsigned long blinkInterval = 500;  // Adjust as needed
 
+// Values for blinking dot - player
+unsigned long blinkStartTime = 0;
+unsigned long blinkInterval = 500;  
+
+// Directions for player movement
 const int UP = 0;
 const int DOWN = 1;
 const int LEFT = 2;
 const int RIGHT = 3;
 
+// Other values
 const int ledOn = 1;
 const int ledOff = 0;
 const int stopVal = 0;
@@ -99,6 +111,7 @@ void setup() {
 
 void loop() {
   int reading = digitalRead(swPin);
+  
   if (reading != lastSwState) {
     lastDebounceTime = millis();
   }
@@ -158,17 +171,20 @@ void loop() {
     joyMoved = false;
   }
 
+  //Blinking player LED
   if (millis() - blinkStartTime >= blinkInterval) {
     matrix[rowLastPos][colLastPos] = !matrix[rowLastPos][colLastPos];
     updateMatrix();
     blinkStartTime = millis();
   }
+
+  // Checking for active bombs and blinking them
   for (int i = bombsStart; i < maxBombs; i++) {
     if (bombs[i].active) {
       if (millis() - bombs[i].startTime <= bombBlinkDuration) {
         matrix[bombs[i].row][bombs[i].col] = !matrix[bombs[i].row][bombs[i].col];
         updateMatrix();
-      } else if (millis() - bombs[i].startTime <= bombBlinkDuration + bombExplosionDuration) {
+      } else if (millis() - bombs[i].startTime <= bombBlinkDuration + bombExplosionDuration) { 
         explodeBomb(i);
       } else {
         if (!gameLost) {
@@ -220,7 +236,7 @@ void playerMove(int direction) {
       rightMovement();
       break;
   }
-  if (matrix[rowCurrentPos][colCurrentPos] == ledOn) {  // is wall
+  if (matrix[rowCurrentPos][colCurrentPos] == ledOn) {  // Check if player walks into a wall
     collision = true;
   } else {
     matrix[rowCurrentPos][colCurrentPos] = ledOn;
@@ -280,7 +296,7 @@ void placeBomb() {
       bombs[i].active = true;
       matrix[bombs[i].row][bombs[i].col] = ledOn;
       updateMatrix();
-      break;  // Exit the loop after placing a bomb
+      break; 
     }
   }
 }
@@ -296,6 +312,7 @@ void explodeBomb(int bombIndex) {
   updateMatrix();
 }
 
+// Clear the areas caught in the explosion
 void clearBomb(int bombIndex) {
   matrix[bombs[bombIndex].row][bombs[bombIndex].col] = ledOff;
   for (int i = matrixStart; i < matrixSize; i++) {
@@ -324,6 +341,7 @@ void gameOver() {
   generateField();
 }
 
+// Randomly generate play area filled with 1s for walls and 0 for walkable spaces
 void generateField() {
   rowCurrentPos = matrixStart;
   colCurrentPos = matrixStart;
@@ -334,7 +352,7 @@ void generateField() {
   randomSeed(millis());
   for (int row = matrixStart + moveOnePos; row < matrixSize; row++) {
     for (int col = matrixStart + moveOnePos; col < matrixSize; col++) {
-      matrix[row][col] = random(randomVal);  // Generates a random number 0 or 1
+      matrix[row][col] = random(randomVal);  
     }
   }
   updateMatrix();
@@ -347,6 +365,7 @@ void generateField() {
   }
 }
 
+// Count the empty spaces to see if matrix was cleared
 void checkGameWon() {
   int counter = initialVal;
   for (int row = matrixStart; row < matrixSize; row++) {
