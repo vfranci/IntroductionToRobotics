@@ -80,8 +80,25 @@ For this project, I used the Arduino Uno board, an 8x8 LED Matrix, the MAX7219 d
 Video demonstration: https://youtu.be/kkz1Z_EdIL0?si=XYh3HSrdYYKS3_C8 
 
 
+## Homework #8 - Matrix Checkpoint - LCD Menu
+
+This assigment consisted of adding an LCD to create a game menu, which you can toggle using a joystick. The purpose of this is to add new functionalities to the game created at Homework #7, such as displaying an initial message for two seconds upon starting the program, the option to start the game from the joystick, to read information about the game and author and modify the LCD and Matrix brightnesses manually. Newly added electrical elements are the LCD, wires, a resistor and a potentiometer.
+
+The menu structure so far is as follows:
+
+1. **Start game**: press the joystick button on this option to begin playing on the matrix
+2. **About**: display information such as game name, author and github link of the author by scrolling it on the LCD
+3. **Settings**: enter settings menu
+
+Settings menu:
+1. **LCD Brightness**: alter LCD brightness by moving the joystick left or right
+2. **Matrix Brightness**: alter matrix brightness by moving the joystick left or right
+3. **Back**: go back to the main menu
 
 
 
+![Project setup](https://github.com/vfranci/IntroductionToRobotics/assets/115077321/9abd74e7-7694-4aa2-9916-14bf960da96b)
+
+Video demonstration: https://youtube.com/shorts/D-jKOg2Ve1Q?si=EBPlpDEz0um2BDDl
 
 
